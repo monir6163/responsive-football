@@ -1,343 +1,359 @@
-/* common style  */
-*{
-    margin: 0;
-    padding: 0;
+/* -------  Fonts -------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* -------------------------------
+    Resets Browsers Default Behave
+------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    box-sizing: border-box;
+
+/* -------------------------------
+    Utility Styles to reuse
+------------------------------------ */
+
+body {
     font-family: 'Poppins', sans-serif;
-}
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.container{
-    width: 870px;
-    border-radius: 5px;
-    padding: 30px;
-    margin-top: 21px;
-    background-color: #ffffff;
-}
+  }
+  
 a {
     text-decoration: none;
 }
-/* top banner  */
-.banner {
+
+img {
     width: 100%;
-    display: flex;
-    background-color: #2D25A0;
-    padding: 50px 0px;
-    margin-bottom: 20px;
 }
-.banner:hover  .banner-image {
-       transform: rotate(10deg);
-       overflow: hidden;
-       transition: .5s linear;
+  
+p {
+    line-height: 26px;
 }
+
+.container {
+  width: 1080px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .half-width {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 50%;
+  padding: 0 10px;
 }
-.banner-title {
-    width: 485px;
-    height: 230px;
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 80px;
-    color: #ffffff;
-    margin-bottom: 27px;
+
+.width-1-of-4 {
+  width: 25%;
+  padding: 0 15px;
 }
-.btn {
-    display: inline-block;
-    width: 168px;
-    height: 44px;
-    background-color: #E02C6D;
-    padding: 10px 24px;
-    color: #ffffff;
-    display: flex;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
-    transition: .5s linear;
+
+.width-1-of-4:first-child,
+.half-width:first-child {
+  padding-left: 0;
 }
-.btn:hover{
+
+.width-1-of-4:last-child,
+.half-width:last-child {
+  padding-right: 0;
+}
+
+.section-title {
+  margin-bottom: 25px;
+}
+
+.heading {
+  color: #0a0826;
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 700;
+}
+
+.small-heading {
+  font-size: 35px;
+}
+
+.description {
+  color: #6c6c6c;
+  margin-top: 8px;
+}
+
+.white-color {
+  color: #ffffff;
+}
+
+/* -------------------------------
+    Button Styles
+------------------------------------ */
+.button {
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #e02c6d;
+  padding: 10px 25px;
+  transition: .5s linear;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.button-icon {
+  margin-left: 8px;
+  transition: .3s linear;
+}
+
+.button:hover {
+  color: #ffffff;
+  background-color: #463EB9;
+}
+
+.button:hover .button-icon {
+    padding-left: 5px;
     transition: .3s linear;
-    transition-duration: 2s;
-    background-color: #18191F;
 }
-.btn span {
-    width: 88px;
-    height: 24px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    margin-right: 7px;
+.button:last-child {
+    border: 0px solid transparent;
 }
-.btn i {
-   transition: .5s linear;
+/* -------------------------------
+    Banner Area Styles
+------------------------------------ */
+#banner-area {
+  background-color:#2D25A0;
+  color: #ffffff;
+  padding: 70px 0;
 }
-.btn:hover i {
-    padding-left: 10px;
-    transition: .3s linear;
+
+.banner-heading {
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 80px;
 }
-.half-width .banner-image {
-    width: 556px;
-    height: 438px;
-    transition: .8s linear;
+
+.banner-image {
+  transition: .5s linear;
 }
-.banner-img img{
-    width: 556px;
-    height: 438px;
+
+#banner-area:hover .banner-image {
+  transform: scale(.9);
+  transition: .5s linear;
 }
-/* all players style  */
-.players{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 40px;
-    justify-content: center;
+
+/* -------------------------------
+    Players Area Styles
+------------------------------------ */
+#players-area {
+  padding: 70px 0;
 }
+
+.players {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
 .player {
-    padding: 15px;
-    box-shadow: 0px 0px 40px rgb(0 0 0 / 15%);
+  padding: 15px;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
 }
-.player img{
-    width: 300px;
-    height: 256px;
+
+.player-name {
+  color: #18191f;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 10px 0;
 }
-.player h3{
-    color: #18191F;
-    font-size: 28px;
-    font-weight: bold;
-    font-style: normal;
-    line-height: 40px;
+
+.player-description {
+  color: #6c6c6c;
+  margin-bottom: 15px;
 }
-.player p{
-    color: #6C6C6C;
-    font-size: 16px;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 26px;
+
+/* -------------------------------
+    Highlights Area Styles
+------------------------------------ */
+#highlights-area {
+  padding: 50px 0 100px 0;
 }
-/* highlight style */
-.title-highlight{
-    color: #18191F;
-    font-size: 28px;
-    font-weight: bold;
-    font-style: normal;
-    line-height: 40px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 25px;
+
+
+
+/* -------------------------------
+    Statistics Area Styles
+------------------------------------ */
+#player-area {
+  padding: 60px 0 80px 0;
+  background-color: #e02c6d;
 }
-hr {
-    color: #000;
-    width: 190px;
+.heading{
+  text-align: center;
 }
-/* top player goals */
-.top-players-title{
-    color: #18191F;
-    font-size: 28px;
-    font-weight: bold;
-    font-style: normal;
-    line-height: 40px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 25px; 
+.player-box {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #463eb9;
 }
-hr {
-    color: #000;
-    width: 190px;
+
+.player-label {
+  color: #ffffff;
+  font-size: 15px;
 }
-.players-record{
-    color: #6C6C6C;
-    font-size: 16px;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 26px;
-    padding-left: 20px;
+
+.player-value {
+  color: #ffffff;
+  font-size: 30px;
 }
-.players-record span{
-    color: crimson;
-    font-weight: bold;
+
+/* -------------------------------
+    Newsletter Area Styles
+------------------------------------ */
+#newsletter-area {
+    padding: 60px 0 80px 0;
+    background-color: #f7f7f7;
 }
-/* Newsletter section styles */
-.newsletter-area {
-    background-color: #F7F7F7;
-    width: 870px;
-    border-radius: 5px;
-    padding: 30px;
-    margin-top: 21px;
-}
+  
 .newsletter {
     width: 500px;
     max-width: 100%;
     margin: auto;
     text-align: center;
 }
-.newsletter-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #18191F;
-}
-.newsletter-description{
-    margin-bottom: 10px;
-}
+  
 .newsletter-form {
     display: flex;
     flex-direction: column;
 }
+input:focus {
+    outline: 0px;
+}
+  
 .newsletter-input {
     text-align: center;
     font-weight: 500;
     padding: 10px 25px;
     border: 2px solid #e02c6d;
-    transition: .3s linear;
-    display: inline-block;
-    margin-bottom: 15px;
-}
-.newsletter-form input {
-      outline: 0;
-}
-.submit-btn {
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #e02c6d;
-    padding: 10px 25px;
-    border: 2px solid #e02c6d;
     transition: all 0.3s ease;
-    display: inline-block;
-    cursor: pointer;
 }
-/* start footer style  */
-.footer {
-    text-align: center;
-}
-.logo{
-    padding-top: 60px;
-    width: 483.87px;
-    height: 110px;
-}
-.social .empty{
-    color: #969BAB;
-    font-size: 24px;
-    padding-right: 14px;
-}
-.social .empty:hover{
-    color: chocolate;
-}
-.footer p{
-    padding-top: 20px;
-    padding-bottom: 63px;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-    color: #000000;
+  
+.newsletter .button {
+    margin-top: 10px;
 }
 
-/* media quieris responsive  */
-   /* Mobile Devices */
-   @media only screen and (max-width:688px) {
-    
-    .container {
-        width: 0;
-        margin-bottom: 30px;
-    }
-    .banner {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-    }
-    .half-width {
-        width: 100%;
-        justify-content: start;
-        margin-left: 10px;
-    }
-    .banner-title {
-        width: 278px;
-        height: 138px;
-        font-size: 36px;
-        font-weight: 700;
-        line-height: 50px;
-        color: #ffffff;
-        margin-bottom: 27px;
-    }
-    .btn {
-        display: inline-block;
-        width: 168px;
-        height: 44px;
-        background-color: #E02C6D;
-        padding: 5px 10px;
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .half-width .banner-image {
-        width: 329px;
-        height: 258px;
-        transition: .8s linear;
-        margin-top: 30px;
-    }
-    .players {
-        grid-template-columns: repeat(1 , 1fr);
-        justify-content: center;
-    }
-    .logo {
-        width: 80%;
-        height: 80px;
-    }
+
+/* -------------------------------
+    Footer Area Styles
+------------------------------------ */
+#footer-area {
+  padding: 50px 0;
+  text-align: center;
 }
-/* tablet responsive */
-@media only screen and (min-width:688px) and (max-width:992px){
-    .container {
-        width: 0;
-        margin-bottom: 30px;
-    }
-    .banner {
-        height: auto;
-    }
-    .half-width {
-        width: 100%;
-        justify-content: start;
-        margin-left: 10px;
-    }
-    .banner-title {
-        width: 278px;
-        height: 138px;
-        font-size: 36px;
-        font-weight: 700;
-        line-height: 50px;
-        color: #ffffff;
-        margin-bottom: 27px;
-    }
-    .btn {
-        display: inline-block;
-        width: 168px;
-        height: 44px;
-        background-color: #E02C6D;
-        padding: 5px 10px;
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .half-width .banner-image {
-        width: 329px;
-        height: 258px;
-        transition: .8s linear;
-        margin-top: 30px;
-    }
-    .players {
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-evenly;
-        align-items: center;
-        column-gap: 15px;
-        padding: 15px;
-        text-align: center;
-    }
+
+.footer-logo {
+  width: 480px;
+  max-width: 100%;
+  margin: auto;
+  line-height: 0;
+}
+
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-icons a i {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  color: #969bab;
+  background-color: #e7e7e8;
+  margin: 0 5px;
+}
+/* -------------------------------
+    Media Query for responsivness
+------------------------------------ */
+
+/* For Tablet Devices */
+@media only screen and (max-width: 991px) {
+  .width-1-of-4 {
+    width: 50%;
+    padding: 15px;
+  }
+
+  .width-1-of-4:nth-child(odd) {
+    padding-left: 0;
+  }
+
+  .width-1-of-4:nth-child(even) {
+    padding-right: 0;
+  }
+
+  .heading,
+  small-heading {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .banner-heading {
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  .players {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For Mobile Devices */
+@media only screen and (max-width: 767px) {
+  .flex {
+    flex-direction: column;
+  }
+
+  .half-width,
+  .width-1-of-4 {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .half-width {
+    padding: 20px 0;
+  }
+
+  .half-width:first-child,
+  .width-1-of-4:first-child {
+    padding-top: 0;
+  }
+
+  .half-width:last-child,
+  .width-1-of-4:last-child {
+    padding-bottom: 0;
+  }
+
+  .players {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+  }
+
+  .footer-logo {
+    width: 270px;
+  }
+
+  #banner-area {
+    padding: 60px 0;
+  }
+
+  #players-area {
+    padding: 45px 0;
+  }
+
+  #highlights-area {
+    padding: 15px 0 45px 0;
+  }
+
+  #player-area {
+    padding: 50px 0 60px 0;
+  }
 }
